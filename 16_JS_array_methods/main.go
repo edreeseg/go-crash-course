@@ -74,11 +74,12 @@ func reverse(arr []int) []int {
 	return arr
 }
 
-func reverseString(str string) string {
-	for i, j := 0, len(str)-1; i < j; i, j = i+1, j-1 {
-		str[i], str[j] = str[j], str[i]
+func reverseString(s string) string {
+	chars := []rune(s)
+	for i, j := 0, len(chars)-1; i < j; i, j = i+1, j-1 {
+		chars[i], chars[j] = chars[j], chars[i]
 	}
-	return str
+	return string(chars)
 }
 
 func main() {
@@ -92,4 +93,5 @@ func main() {
 	fmt.Println(indexOf(arr, 99))
 	reverseArr := []int{5, 4, 3, 2, 1}
 	fmt.Println(reverse(reverseArr))
+	fmt.Println(reverseString("Hello World"))
 }
